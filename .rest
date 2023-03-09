@@ -1,0 +1,45 @@
+GET http://localhost:8080/notes HTTP/1.1
+
+
+
+###
+# Get workout by Id
+GET http://localhost:8080/notes/640a0098dff6b09a8b94ee1b
+
+###
+# Create new workout
+POST http://localhost:8080/notes HTTP/1.1
+Content-Type: application/json
+
+{
+      "userId": "1",
+      "title": "Buy Chiccken",
+      "createDate": "2022-02-28T18:30:00.000Z",
+      "updateDate": "2022-02-28T18:30:00.000Z",
+      "classification": "Shopping",
+      "completed": "no",
+      "content": "Buy 10 pound of chicken for the week"
+}
+
+
+// PRODUCTION Deploy
+# With Render
+
+# Get all the contacts
+###
+GET https://workout-project.onrender.com/workouts HTTP/1.1
+
+###
+# Get contact by ID
+GET https://workout-project.onrender.com/workouts/6405c95b772eb4d85a5d8d28 
+
+
+### Create contact
+POST https://workout-project.onrender.com/workouts HTTP/1.1
+content-type: application/json
+
+{
+    "name":"Leg Extensions",
+    "muscle":"Leg",
+    "explination": "The leg extension is a resistance weight training exercise that targets the quadriceps muscle"
+}
