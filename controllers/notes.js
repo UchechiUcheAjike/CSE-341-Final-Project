@@ -94,7 +94,7 @@ const deleteNote = async (req, res) => {
     res.status(400).json('Must use a valid Note id to delete a job.');
   }
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('Notes').remove({
+  const response = await mongodb.getDb().db().collection('notes').remove({
     _id: userId
   }, true);
   console.log(response);

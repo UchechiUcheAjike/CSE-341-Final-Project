@@ -78,3 +78,6 @@ content-type: application/json
       "completed": "no",
       "content": "Call the team to make plans for a meeting"
 }
+
+### DELETE contact
+DELETE https://notes-final-project-cse-341.onrender.com/notes/640b0cc58fa4f17fc839d726 HTTP/1.1
