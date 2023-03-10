@@ -5,7 +5,7 @@ const getAll = (req, res) => {
   mongodb
     .getDb()
     .db()
-    .collection('jobs')
+    .collection('notes')
     .find()
     .toArray((err, lists) => {
       if (err) {
@@ -26,7 +26,7 @@ const getSingle = (req, res) => {
   mongodb
     .getDb()
     .db()
-    .collection('jobs')
+    .collection('notes')
     .find({
       _id: userId
     })
@@ -41,74 +41,74 @@ const getSingle = (req, res) => {
     });
 };
 
-const createJob = async (req, res) => {
-  const job = {
-    status: req.body.status,
-    company: req.body.company,
+const createNote = async (req, res) => {
+  const note = {
+    userId: req.body.userId,
     title: req.body.title,
-    position: req.body.position,
-    level: req.body.level,
-    YearsOfExperience: req.body.YearsOfExperience,
-    createdAt: req.body.createdAt
+    createDate: req.body.createDate,
+    updateDate: req.body.updateDate,
+    classification: req.body.classification,
+    completed: req.body.completed,
+    content: req.body.content
   };
-  const response = await mongodb.getDb().db().collection('jobs').insertOne(job);
+  const response = await mongodb.getDb().db().collection('notes').insertOne(note);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
-    res.status(500).json(response.error || 'Some error occurred while creating the job.');
+    res.status(500).json(response.error || 'Some error occurred while creating the note.');
   }
 };
 
-const updateJob = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid job id to update a job.');
-  }
-  const userId = new ObjectId(req.params.id);
-  // be aware of updateOne if you only want to update specific fields
-  const job = {
-    status: req.body.status,
-    company: req.body.company,
-    title: req.body.title,
-    position: req.body.position,
-    level: req.body.level,
-    YearsOfExperience: req.body.YearsOfExperience,
-    createdAt: req.body.createdAt
-  };
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('jobs')
-    .replaceOne({
-      _id: userId
-    }, job);
-  console.log(response);
-  if (response.modifiedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while updating the job.');
-  }
-};
+// const updateJob = async (req, res) => {
+//   if (!ObjectId.isValid(req.params.id)) {
+//     res.status(400).json('Must use a valid job id to update a job.');
+//   }
+//   const userId = new ObjectId(req.params.id);
+//   // be aware of updateOne if you only want to update specific fields
+//   const job = {
+//     status: req.body.status,
+//     company: req.body.company,
+//     title: req.body.title,
+//     position: req.body.position,
+//     level: req.body.level,
+//     YearsOfExperience: req.body.YearsOfExperience,
+//     createdAt: req.body.createdAt
+//   };
+//   const response = await mongodb
+//     .getDb()
+//     .db()
+//     .collection('jobs')
+//     .replaceOne({
+//       _id: userId
+//     }, job);
+//   console.log(response);
+//   if (response.modifiedCount > 0) {
+//     res.status(204).send();
+//   } else {
+//     res.status(500).json(response.error || 'Some error occurred while updating the job.');
+//   }
+// };
 
-const deleteJob = async (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid job id to delete a job.');
-  }
-  const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('jobs').remove({
-    _id: userId
-  }, true);
-  console.log(response);
-  if (response.deletedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while deleting the job.');
-  }
-};
+// const deleteJob = async (req, res) => {
+//   if (!ObjectId.isValid(req.params.id)) {
+//     res.status(400).json('Must use a valid job id to delete a job.');
+//   }
+//   const userId = new ObjectId(req.params.id);
+//   const response = await mongodb.getDb().db().collection('jobs').remove({
+//     _id: userId
+//   }, true);
+//   console.log(response);
+//   if (response.deletedCount > 0) {
+//     res.status(204).send();
+//   } else {
+//     res.status(500).json(response.error || 'Some error occurred while deleting the job.');
+//   }
+// };
 
 module.exports = {
   getAll,
   getSingle,
-  createJob,
-  updateJob,
-  deleteJob
+  createNote
+  // updateJob,
+  // deleteJob
 };
