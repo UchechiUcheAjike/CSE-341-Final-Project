@@ -5,12 +5,19 @@
     "description": "Notes API",
     "version": "1.0.0"
   },
-  "host": "https://notes-final-project-cse-341.onrender.com",
+  "host": "notes-final-project-cse-341.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/notes/": {
       "get": {
         "description": "",
