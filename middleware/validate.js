@@ -1,6 +1,6 @@
 const validator = require('../helpers/validate');
 
-const saveJob = (req, res, next) => {
+const saveNote = (req, res, next) => {
     const validationRule = {
         status: 'required|string',
         company: 'required|string',
@@ -24,5 +24,5 @@ const saveJob = (req, res, next) => {
 };
 
 module.exports = {
-    saveJob
+    saveNote
 };

@@ -1,11 +1,11 @@
 
 # Get all the notes
-GET http://localhost:3000/notes HTTP/1.1
+GET http://localhost:8080/notes HTTP/1.1
 
 
 ###
 # Get Notes by Id
-GET http://localhost:3000/notes/640a0098dff6b09a8b94ee1b
+GET http://localhost:8080/notes/640a0098dff6b09a8b94ee1b
 
 ###
 # Create new Note
@@ -13,34 +13,68 @@ POST http://localhost:8080/notes HTTP/1.1
 Content-Type: application/json
 
 {
-      "userId": "1",
-      "title": "Buy Chiccken",
+      "userId": "3",
+      "title": "Contact team project members",
       "createDate": "2022-02-28T18:30:00.000Z",
       "updateDate": "2022-02-28T18:30:00.000Z",
-      "classification": "Shopping",
+      "classification": "educational",
       "completed": "no",
-      "content": "Buy 10 pound of chicken for the week"
+      "content": "Call the team to make plans for a meeting"
 }
 
+### PUT contact Update
+PUT http://localhost:8080/notes/640b083ee3b87a71f352d9cf HTTP/1.1
+content-type: application/json
+
+{
+      "userId": "1",
+      "title": "Contact team project members",
+      "createDate": "2022-02-28T18:30:00.000Z",
+      "updateDate": "2022-02-28T18:30:00.000Z",
+      "classification": "educational",
+      "completed": "no",
+      "content": "Call the team to make plans for a meeting"
+}
+
+### DELETE contact
+DELETE http://localhost:8080/notes/640b083ee3b87a71f352d9cf HTTP/1.1
 
 // PRODUCTION Deploy
 # With Render
 
 # Get all the notes
 ###
-GET https://workout-project.onrender.com/workouts HTTP/1.1
+GET https://notes-final-project-cse-341.onrender.com/notes HTTP/1.1
 
 ###
 # Get note by ID
-GET https://workout-project.onrender.com/workouts/6405c95b772eb4d85a5d8d28 
+GET https://notes-final-project-cse-341.onrender.com/notes/640b083ee3b87a71f352d9cf 
 
+###
+# Create new Note
+POST https://notes-final-project-cse-341.onrender.com/notes HTTP/1.1
+Content-Type: application/json
 
-### Create note
-POST https://workout-project.onrender.com/workouts HTTP/1.1
+{
+      "userId": "3",
+      "title": "Contact team project members",
+      "createDate": "2022-02-28T18:30:00.000Z",
+      "updateDate": "2022-02-28T18:30:00.000Z",
+      "classification": "educational",
+      "completed": "no",
+      "content": "Call the team to make plans for a meeting"
+}
+
+### PUT contact Update
+PUT https://notes-final-project-cse-341.onrender.com/notes/640b0cc58fa4f17fc839d726 HTTP/1.1
 content-type: application/json
 
 {
-    "name":"Leg Extensions",
-    "muscle":"Leg",
-    "explination": "The leg extension is a resistance weight training exercise that targets the quadriceps muscle"
+      "userId": "10",
+      "title": "Contact team project members",
+      "createDate": "2022-02-28T18:30:00.000Z",
+      "updateDate": "2022-02-28T18:30:00.000Z",
+      "classification": "educational",
+      "completed": "no",
+      "content": "Call the team to make plans for a meeting"
 }

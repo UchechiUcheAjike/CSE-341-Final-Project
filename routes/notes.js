@@ -11,14 +11,15 @@ router.get('/', notesController.getAll);
 router.get('/:id', notesController.getSingle);
 
 // // eslint-disable-next-line no-undef
-// router.post('/', validation.saveJob, jobsController.createJob);
+// router.post('/', validation.saveNote, notesController.createNote);
 router.post('/', notesController.createNote);
 
 
 // // eslint-disable-next-line no-undef
 // router.put('/:id', validation.saveJob, jobsController.updateJob);
+router.put('/:id', notesController.updateNote);
 
 // // eslint-disable-next-line no-undef
-// router.delete('/:id', jobsController.deleteJob);
+router.delete('/:id', notesController.deleteNote);
 
 module.exports = router;
