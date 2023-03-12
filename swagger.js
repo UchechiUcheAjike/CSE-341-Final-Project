@@ -21,3 +21,9 @@ const endpointsFiles = ['./server.js'];
    such as index.js, app.js, routes.js, ... */
 
 swaggerAutogen(outputFile, endpointsFiles, doc);
+
+
+// Remember for swagger 
+// npm install swagger-ui-express
+// npm install --save-dev swagger-autogen
+// npm run swagger-autogen

@@ -1,3 +1,4 @@
+
 const validator = require('../helpers/validate');
 
 const saveNote = (req, res, next) => {
@@ -26,3 +27,12 @@ const saveNote = (req, res, next) => {
 module.exports = {
     saveNote
 };
+
+
+// Run the following commands to make the validate work 
+// npm install body-parser --save
+// npm install express-validator cors --save
+// node sever.js
+
+// If does not work run the following command
+// npm i -S validator
