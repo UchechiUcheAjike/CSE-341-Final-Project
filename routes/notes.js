@@ -23,3 +23,6 @@ router.put('/:id', validation.saveNote, notesController.updateNote);
 router.delete('/:id', notesController.deleteNote);
 
 module.exports = router;
+
+
+

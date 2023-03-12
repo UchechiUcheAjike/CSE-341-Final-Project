@@ -3,13 +3,13 @@ const validator = require('../helpers/validate');
 
 const saveNote = (req, res, next) => {
     const validationRule = {
-        status: 'required|string',
-        company: 'required|string',
+        userId: 'required|string',
         title: 'required|string',
-        position: 'required|string',
-        level: 'required|string',
-        YearsOfExperience: 'required|string',
-        createdAt: 'required|string'
+        createDate: 'required|string',
+        updateDate: 'required|string',
+        classification: 'required|string',
+        completed: 'required|string',
+        content: 'required|string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
