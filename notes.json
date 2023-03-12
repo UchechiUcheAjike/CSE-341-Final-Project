@@ -1,0 +1,42 @@
+{
+    "note1": {
+      "userId": "1",
+      "title": "Buy Tomatoes",
+      "createDate": "2022-02-28T18:30:00.000Z",
+      "updateDate": "2022-02-28T18:30:00.000Z",
+      "classification": "Shopping",
+      "completed": "no",
+      "content": "Rember to buy 2 pounds of tomatoes"
+    },
+
+    "note2": {
+        "userId": "2",
+        "title": "Call Mom",
+        "createDate": "2022-02-28T18:30:00.000Z",
+        "updateDate": "2022-02-28T18:30:00.000Z",
+        "classification": "Family",
+        "completed": "yes",
+        "content": "Remember to call mom to discuss Christmas vacations"
+      },
+
+      "note3": {
+        "userId": "3",
+        "title": "Call Doctor",
+        "createDate": "2022-02-28T18:30:00.000Z",
+        "updateDate": "2022-02-28T18:30:00.000Z",
+        "classification": "Appointments",
+        "completed": "no",
+        "content": "Call the doctor for my appointmes for conctact glasses"
+      }
+
+ }
+
+
+
+
+
+
+
+
+
+
