@@ -20,7 +20,7 @@ const getAll = (req, res) => {
 
 const getSingle = (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid job id to find a job.');
+    res.status(400).json('Must use a valid Note id to find a note.');
   }
   const noteId = new ObjectId(req.params.id);
   mongodb
@@ -61,7 +61,7 @@ const createNote = async (req, res) => {
 
 const updateNote = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid Note id to update a job.');
+    res.status(400).json('Must use a valid Note id to update a note.');
   }
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
@@ -85,13 +85,13 @@ const updateNote = async (req, res) => {
   if (response.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(response.error || 'Some error occurred while updating the job.');
+    res.status(500).json(response.error || 'Some error occurred while updating the note.');
   }
 };
 
 const deleteNote = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid Note id to delete a job.');
+    res.status(400).json('Must use a valid Note id to delete a note.');
   }
   const userId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('notes').remove({
