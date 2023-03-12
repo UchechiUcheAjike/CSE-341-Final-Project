@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const notesController = require('../controllers/notes');
-// const validation = require('../middleware/validate');
+const validation = require('../middleware/validate');
 
 // eslint-disable-next-line no-undef
 router.get('/', notesController.getAll);
@@ -11,13 +11,13 @@ router.get('/', notesController.getAll);
 router.get('/:id', notesController.getSingle);
 
 // // eslint-disable-next-line no-undef
-// router.post('/', validation.saveNote, notesController.createNote);
-router.post('/', notesController.createNote);
+router.post('/', validation.saveNote, notesController.createNote);
+// router.post('/', notesController.createNote);
 
 
 // // eslint-disable-next-line no-undef
-// router.put('/:id', validation.saveJob, jobsController.updateJob);
-router.put('/:id', notesController.updateNote);
+router.put('/:id', validation.saveNote, notesController.updateNote);
+// router.put('/:id', notesController.updateNote);
 
 // // eslint-disable-next-line no-undef
 router.delete('/:id', notesController.deleteNote);
