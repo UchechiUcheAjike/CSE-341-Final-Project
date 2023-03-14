@@ -19,6 +19,14 @@ const getAll = (req, res) => {
 };
 
 const getSingle = (req, res) => {
+  /* #swagger.parameters['parameterName'] = {
+        in: <string>,
+        description: <string>,
+        required: <boolean>,
+        type: <string>,
+        format: <string>,
+        schema: <array>, <object> or <string>
+} */
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid Note id to find a note.');
   }
