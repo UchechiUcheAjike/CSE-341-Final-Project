@@ -47,3 +47,8 @@ mongodb.initDb((err) => {
     console.log(`Connected to DB and listening on ${port}`);
   }
 });
+
+
+// Fetch request from fronot-end to the back-end 
+// egs 
+// javascript fetch requrest 
