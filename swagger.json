@@ -5,7 +5,7 @@
     "description": "Notes API",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "notes-final-project-cse-341.onrender.com",
   "basePath": "/",
   "schemes": ["http"],
   "paths": {
