@@ -41,8 +41,15 @@
     "/notes/": {
       "get": {
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "post": {
         "description": "",
@@ -116,25 +123,25 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
+                "userId": {
                   "example": "any"
                 },
-                "muscle": {
+                "title": {
                   "example": "any"
                 },
-                "type": {
+                "createDate": {
                   "example": "any"
                 },
-                "times": {
+                "updateDate": {
                   "example": "any"
                 },
-                "days": {
+                "classification": {
                   "example": "any"
                 },
-                "sets": {
+                "completed": {
                   "example": "any"
                 },
-                "explination": {
+                "content": {
                   "example": "any"
                 }
               }
@@ -160,7 +167,14 @@
             "type": "string"
           }
         ],
-        "responses": {}
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     }
   }
