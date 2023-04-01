@@ -26,7 +26,15 @@ const getDb = () => {
   return _db;
 };
 
+const closeDb = () => {
+  if (!_db) {
+    throw Error('Db connection does not exist');
+  }
+  _db.close();
+};
+
 module.exports = {
   initDb,
-  getDb
+  getDb,
+  closeDb
 };
