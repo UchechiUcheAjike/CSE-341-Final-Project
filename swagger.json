@@ -46,8 +46,46 @@
       },
       "post": {
         "description": "",
-        "parameters": [],
-        "responses": {}
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "title": {
+                  "example": "any"
+                },
+                "createDate": {
+                  "example": "any"
+                },
+                "updateDate": {
+                  "example": "any"
+                },
+                "classification": {
+                  "example": "any"
+                },
+                "completed": {
+                  "example": "any"
+                },
+                "content": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/notes/{id}": {
@@ -71,9 +109,46 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "muscle": {
+                  "example": "any"
+                },
+                "type": {
+                  "example": "any"
+                },
+                "times": {
+                  "example": "any"
+                },
+                "days": {
+                  "example": "any"
+                },
+                "sets": {
+                  "example": "any"
+                },
+                "explination": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
-        "responses": {}
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       },
       "delete": {
         "description": "",
